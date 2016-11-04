@@ -1,0 +1,47 @@
+{% extends 'layouts/page.twig' %}
+
+{% block main %}
+
+<div id="main">
+
+	<div class="login">
+		<div class="container">
+			<div class="col-md-6">
+			<h1>Omnidrink</h1>
+				<p>O Aplicativo possui o intuito de levar suas bebidas para o Bar ou Restaurante mais próximo que estiver. Ao comprar uma bebida (garrafa), a mesma é adicionada a uma estante pessoal, onde os bares cadastrados na rede a as disponibilizaram.</p>
+			</div>
+
+			<div class="col-md-4 col-md-offset-2">
+				<div class="panel panel-default">
+					<div class="panel-body">
+
+						<form action="">
+							<div class="form-group">
+								<label for="">Nome do Usuário</label>
+								<input type="text" class="form-control">
+							</div>
+
+							<div class="form-group">
+								<label for="">Senha</label>
+								<input type="password" class="form-control">
+							</div>
+
+							<div class="form-group">
+								<input type="submit" class="btn btn-default" value="Entrar">
+								<a href="{{base_url()}}/bars/register">Fazer parte</a>
+							</div>
+						</form>
+
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
+
+
+</div>
+
+{% endblock %}

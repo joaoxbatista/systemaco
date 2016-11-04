@@ -1,0 +1,83 @@
+{% extends 'layouts/page_menu.twig' %}
+
+{% block main %}
+
+<div id="main">
+
+	<div class="container">
+
+		<div class="col-md-12">
+			<div class="alert alert-info">
+				<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+				<strong>Informamos</strong> que ao preencher as informações nossa equipe ira entrar em contato com você e marcaremos uma visita para que possa ser finalizado o cadastro do seu estabelecimento no Omnidrink!
+			</div>
+			<div class="panel panel-default">
+
+				<div class="panel-heading">
+					Formulário de cadastro
+				</div>
+				<div class="panel-body">
+					<form action="">
+						<div class="row">
+							<div class="col-md-4 form-group">
+								<label for="">Nome</label>
+								<input type="text" class="form-control">
+							</div>
+							<div class="col-md-4 form-group">
+								<label for="">Estado</label>
+								<input type="text" class="form-control">
+							</div>
+							<div class="col-md-4 form-group">
+								<label for="">Cidade</label>
+								<input type="text" class="form-control">
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-md-4 form-group">
+								<label for="">Bairro</label>
+								<input type="text" class="form-control">
+							</div>
+							<div class="col-md-1 form-group">
+								<label for="">Número</label>
+								<input type="text" class="form-control">
+							</div>
+							<div class="col-md-4 form-group">
+								<label for="">Ponto de Referência</label>
+								<input type="text" class="form-control">
+							</div>
+							<div class="col-md-3 form-group">
+								<label for="">CEP</label>
+								<input type="text" class="form-control">
+							</div>
+						</div>
+
+						<div class="row">
+							
+							<div class="col-md-3 form-group">
+								<label for="">Telefone</label>
+								<input type="text" class="form-control">
+							</div>
+							<div class="col-md-4 form-group">
+								<label for="">E-mail</label>
+								<input type="text" class="form-control">
+							</div>
+							<div class="col-md-4 form-group">
+								<label for="">CNPJ</label>
+								<input type="text" class="form-control">
+							</div>
+						</div>
+						
+						<div class="row">
+							<div class="col-md-3 form-group">
+								<input type="submit" value="Finalizar cadastro" class="btn btn-success btn-block">
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endblock %}
