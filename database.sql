@@ -40,3 +40,15 @@ create table providers(
 	email varchar(255) not null unique,
 	cnpj varchar(20) not null
 );
+
+INSERT INTO providers (nome, estado, cidade, bairro, numero, ponto_ref, cep, telefone, email, cnpj)
+VALUES ('Reds L. Wk', 'Alagoas', 'Arapiraca', 'Centro', 14, 'Próximo a praça da prefeitura', '1223312312', '1311112312', 'lbkw@lbkw.com', '341222312312');
+
+#SELECIONAR BEBIDAS COM O NOME DA CATEGORIA
+SELECT drinks.*, providers.nome as nome_fornecedor from drinks
+INNER JOIN providers on drinks.id_fornecedor = providers.id GROUP BY nome_fornecedor;
+
+#SELECIONAR AS BEBIDAS DE UM USUARIOS
+SELECT drinks.nome, drinks.qtd_doses, users.nome as nome_dono from drinks
+INNER JOIN users on drinks.id_usuario = users.id
+ORDER BY nome_dono;

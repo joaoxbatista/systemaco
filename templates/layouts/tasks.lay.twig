@@ -1,0 +1,45 @@
+<!doctype html>
+
+<html lang="pt-br">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>{% block title %}{% endblock %}</title>
+		<link rel="stylesheet" type="text/css" href="{{base_url()}}/css/autoload.css">
+		<link rel="stylesheet" type="text/css" href="{{base_url()}}/css/home.css">
+	</head>
+
+	<body>
+		<div id="menu">
+			<div class="container">
+				<nav role="navigation">
+
+					<li class="item" ><a href="{{base_url()}}/" >Home</a></li>
+
+					<li class="item dropdown"><a href="{{base_url()}}/tasks" >Tarefas</a>
+						<ul>
+							<li><a href="{{base_url()}}/tasks/add">Adicionar</a></li>
+						</ul>
+					</li>
+
+					<li class="item dropdown"><a href="{{base_url()}}/docs">Documentação</a>
+						<ul>
+							<li><a href="{{base_url()}}/docs/add">Adicionar</a></li>
+						</ul>
+					</li>
+					
+				</nav>
+			</div>
+		</div>
+		
+		<main id="main" role="main">
+
+			{% block main%}
+			{% endblock %}
+		</main>
+
+		{% block scripts %}
+		    
+		{% endblock %}
+	</body>
+</html>

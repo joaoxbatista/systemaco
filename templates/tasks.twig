@@ -1,0 +1,42 @@
+{% extends 'layouts/tasks.lay.twig' %}
+
+{% block title %}Tasks of Project{% endblock %} 
+
+{% block main %}
+	
+
+	<!-- tasks div -->
+		<div id="tasks">
+			<div class="container">
+				{% for task in  tasks %}
+					<div class="col-md-6">
+						<div class="panel panel-success">
+							<div class="panel-heading">
+								<h3>[{{task.project_name}}] - {{task.task_name}}</h3>
+								<p>Criado em <span class="badge">{{task.created_at | date('d/m/Y')}}</span>, por <strong> {{task.user_name}} </strong></p>
+								
+								<form action="{{base_url()}}/tasks/edit" method="post">
+									<input type="hidden" name="task_id" value="{{task.task_id}}">
+									
+									<button type="submit" class="btn btn-edit"><span class="glyphicon glyphicon-pencil"></span></button>
+								</form>
+
+								
+							</div>
+
+							<div class="panel-body">
+								<h1>{{task.project}}</h1>					
+								<article>{{task.task_desc | raw}}</article>
+							</div>
+
+							<div class="panel-footer">
+								<a class="btn btn-success" href="{{task.task_link}}"><span class="glyphicon glyphicon-download"></span></a>
+							</div>
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+	<!--/ tasks div -->
+
+{% endblock %}

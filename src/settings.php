@@ -21,7 +21,8 @@ return [
         'db' => [
             'driver' => 'mysql',
             'host' => 'localhost',
-            'database' => 'omnidrink',
+            'port' => '3330',
+            'database' => 'tasks',
             'username' => 'root',
             'password' => 'admin',
             'charset' => 'utf8',
