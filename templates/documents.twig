@@ -8,29 +8,26 @@
 	<!-- documents div -->
 		<div id="documents">
 			<div class="container">
-				{% for document in  documents %}
-					<div class="col-md-12">
-						<div class="panel panel-success">
-							<div class="panel-heading">
-								<h3>[{{document.project_name}}] - {{document.doc_name}}</h3>
-								<p>Criado em <span class="badge">{{document.created_at | date('d/m/Y')}}</span>, por <strong> {{document.doc_author}} </strong></p>
-								
-								<form action="{{base_url()}}/docs/edit" method="post">
-									<input type="hidden" name="document_id" value="{{document.doc_id}}">
-									
-									<button type="submit" class="btn btn-edit"><span class="glyphicon glyphicon-pencil"></span></button>
-								</form>
-
-								
-							</div>
-
-							<div class="panel-body">	
-								<article>{{document.doc_text | raw}}</article>
-
+				<div class="col-md-12">
+					<h1 class="title">Documentação</h1>
+					
+					{% for project in projects %}
+						<div class="panel panel-primary">
+							<div class="panel-heading"><h3>{{project.project_name}}</h3></div>
+							<div class="panel-body">
+								<ul class="list">
+									{% for document in  documents %}
+										{% if document.project_name == project.project_name %}
+											<li class="element"><a href="{{base_url()}}/docs/view/{{document.doc_id}}">{{document.doc_name}}</a></li>
+										{% endif %}							
+									{% endfor %}
+								</ul>
 							</div>
 						</div>
-					</div>
-				{% endfor %}
+					{% endfor %}
+
+					
+				</div>
 			</div>
 		</div>
 	<!--/ documents div -->

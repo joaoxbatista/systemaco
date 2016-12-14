@@ -10,27 +10,49 @@
 	</head>
 
 	<body>
-		<div id="menu">
-			<div class="container">
-				<nav role="navigation">
 
-					<li class="item" ><a href="{{base_url()}}/" >Home</a></li>
+		<nav class="navbar navbar-default">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="{{base_url()}}/">Systemaco</a>
+    </div>
 
-					<li class="item dropdown"><a href="{{base_url()}}/tasks" >Tarefas</a>
-						<ul>
-							<li><a href="{{base_url()}}/tasks/add">Adicionar</a></li>
-						</ul>
-					</li>
+    
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+     
+   
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="{{base_url()}}/" >Home</a></li>
+        
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tasks<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+          	<li><a href="{{base_url()}}/tasks">Visualizar</a></li>
+            <li><a href="{{base_url()}}/tasks/add">Adicionar</a></li>
+          </ul>
+        </li>
 
-					<li class="item dropdown"><a href="{{base_url()}}/docs">Documentação</a>
-						<ul>
-							<li><a href="{{base_url()}}/docs/add">Adicionar</a></li>
-						</ul>
-					</li>
-					
-				</nav>
-			</div>
-		</div>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Documents<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="{{base_url()}}/docs">Visualizar</a></li>
+            <li><a href="{{base_url()}}/docs/add">Adicionar</a></li>
+          </ul>
+        </li>
+
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+		
 		
 		<main id="main" role="main">
 
@@ -38,6 +60,8 @@
 			{% endblock %}
 		</main>
 
+		<script src="{{base_url()}}/js/jquery.min.js"></script>
+		<script src="{{base_url()}}/js/bootstrap.min.js"></script>
 		{% block scripts %}
 		    
 		{% endblock %}

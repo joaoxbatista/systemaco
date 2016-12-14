@@ -1,0 +1,61 @@
+{% extends 'layouts/tasks.lay.twig' %}
+
+{% block title %}{{document.doc_name}} - Editar{% endblock %} 
+
+{% block main %}
+
+	<!-- add tasks -->
+	<div id="addTask">
+		<div class="container">
+				<form action="{{base_url}}/docs/update" method="post">
+							
+					<input type="hidden" name="doc_id" value="{{document.doc_id}}">
+
+					<div class="form-group col-md-4">
+						<label>Documento</label>
+						<input type="text" name="doc_name" value="{{document.doc_name}}" class="form-control">
+					</div>
+
+					<div class="form-group col-md-4">
+						<label>Autor</label>
+						<input type="text" name="doc_author" value="{{document.doc_author}}" class="form-control">
+					</div>
+
+					<div class="form-group col-md-4">
+						<label>Palavra chave</label>
+						<input type="text" name="doc_keyword" value="{{document.doc_keyword}}" class="form-control">
+					</div>
+
+					<div class="form-group col-md-4">
+						<label>Projeto</label>
+						<select name="project_id"  class="form-control">
+							<option value="{{document.project_id}}">{{document.project_name}}</option>
+							{% for project in projects %}
+								<option value="{{project.project_id}}" > {{project.project_name}}</option>
+							{% endfor %}
+						</select>
+					</div>
+
+					<div class="form-group col-md-12">
+						<label>Texto</label>
+						<textarea resizeble="false" id="doc_text" name="doc_text" class="form-control" rows="20">
+						{{document.doc_text}}
+						</textarea>
+					</div>
+
+					<div class="col-md-4">
+						<button type="submit" class="btn btn-primary btn-block"> Atualizar</button>
+					</div>
+				</form>
+			</div>
+	</div>
+	<!-- add tasks	-->
+
+{% endblock %}
+
+{% block scripts %}
+    <script src="//cdn.ckeditor.com/4.6.1/full/ckeditor.js"></script>
+    <script>
+    	 CKEDITOR.replace( 'doc_text' );
+    </script>
+{% endblock %}

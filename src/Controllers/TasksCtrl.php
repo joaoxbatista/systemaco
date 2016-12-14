@@ -25,6 +25,20 @@
 			return $this->container->view->render($response, 'tasks.twig', array('tasks' => $result, 'projects' => $projects ));
 		}
 
+		public function view($request, $response, $args){
+
+			$task = Task::find($args['id'])->toArray();
+			$project_name = Project::find($task['project_id'])->project_name;
+			$task['project_name'] = $project_name;
+
+			return $this->view->render($response, 'tasks_view.twig', 
+				array(
+					'task' => $task
+				)
+			);
+		}
+
+
 		public function add_page($request, $response){
 			$projects = Project::all()->toArray();
 			return $this->container->view->render($response, 'task_add.twig', array('projects' => $projects));
@@ -40,7 +54,7 @@
 			$task->user_name = $_POST['user_name'];
 			$task->save();
 
-			return $response->withRedirect('/');
+			return $response->withRedirect('/tasks');
 		}
 
 		public function edit_page($request, $response){
@@ -61,6 +75,6 @@
 			$task->user_name = $_POST['user_name'];
 			$task->save();
 
-			return $response->withRedirect('/');
+			return $response->withRedirect('/tasks');
 		}
 	}

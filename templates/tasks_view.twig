@@ -1,0 +1,28 @@
+{% extends 'layouts/tasks.lay.twig' %}
+
+{% block title %}{{task.project_name}} - {{task.task_name}}{% endblock %} 
+
+{% block main %}
+	
+
+	<!-- tasks div -->
+		<div id="tasks">
+			<div class="container">
+				<div class="col-md-12">
+					<hgroup class="title_post">
+						<h1>{{task.task_name}}</h1>
+						<h2>Criado em <strong>{{document.created_at | date('d/m/Y')}}</strong>, por <strong> {{task.user_name}} </strong></h2>
+					</hgroup>
+
+					<form method="post" action="{{base_url()}}/tasks/edit">
+						<input type="hidden" name="task_id" value="{{task.task_id}}">
+						<button class="btn" type="submit">Editar</button>
+					</form>
+
+					<article>{{task.task_desc | raw}}</article>
+				</div>
+			</div>
+		</div>
+	<!--/ tasks div -->
+
+{% endblock %}

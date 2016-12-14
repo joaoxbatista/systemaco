@@ -8,20 +8,20 @@
 	<div id="addTask">
 
 		<div class="container">
-				<form action="{{base_url}}/tasks/add" method="post">
+				<form action="{{base_url}}/docs/add" method="post">
 					<div class="form-group col-md-4">
-						<label>Tarefa</label>
-						<input type="text" name="task_name" class="form-control">
+						<label>Documento</label>
+						<input type="text" name="doc_name" class="form-control">
 					</div>
 
 					<div class="form-group col-md-4">
-						<label>Usuário</label>
-						<input type="tex" name="user_name" class="form-control">
+						<label>Autor</label>
+						<input type="text" name="doc_author" class="form-control">
 					</div>
 
 					<div class="form-group col-md-4">
-						<label>Link do Repositório/Download</label>
-						<input type="text" name="task_link" class="form-control">
+						<label>Palavra chave</label>
+						<input type="text" name="doc_keyword" class="form-control">
 					</div>
 
 					<div class="form-group col-md-4">
@@ -34,20 +34,8 @@
 					</div>
 
 					<div class="form-group col-md-12">
-						<label>Descrição</label>
-						<textarea resizeble="false" id="task_desc" name="task_desc" class="form-control" rows="20"><h1>Modelo de Descri&ccedil;&atilde;o</h1>
-
-<p><strong>Objetivo da tarefa </strong></p>
-
-<p>Lorem ipsum dolor sit amet.</p>
-
-<p><strong>Descri&ccedil;&atilde;o da tarefa</strong></p>
-
-<p>Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-
-<p><strong>Tecnologias e Ferramentas</strong></p>
-
-<p>utilizadas Bootstrap, Sass e PHP;</p>
+						<label>Texto</label>
+						<textarea resizeble="false" id="doc_text" name="doc_text" class="form-control" rows="20">
 
 						</textarea>
 					</div>
@@ -65,6 +53,6 @@
 {% block scripts %}
     <script src="//cdn.ckeditor.com/4.6.1/full/ckeditor.js"></script>
     <script>
-    	 CKEDITOR.replace( 'task_desc' );
+    	 CKEDITOR.replace( 'doc_text' );
     </script>
 {% endblock %}

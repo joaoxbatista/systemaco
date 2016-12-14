@@ -8,7 +8,7 @@
 	<div id="addTask">
 
 		<div class="container">
-				<form action="{{base_url}}/tasks/add" method="post">
+				<form action="{{ path_for('task.add') }}" method="post">
 					<div class="form-group col-md-4">
 						<label>Tarefa</label>
 						<input type="text" name="task_name" class="form-control">

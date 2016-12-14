@@ -1,0 +1,30 @@
+{% extends 'layouts/tasks.lay.twig' %}
+
+{% block title %}{{document.project_name}} - {{document.doc_name}}{% endblock %} 
+
+{% block main %}
+	
+
+	<!-- documents div -->
+		<div id="documents">
+			<div class="container">
+					<div class="col-md-12">
+					
+								<hgroup class="title_post">
+									<h1>{{document.doc_name}}</h1>
+									<h2>Criado em <strong>{{document.created_at | date('d/m/Y')}}</strong>, por <strong> {{document.doc_author}} </strong></h3>
+								</hgroup>
+
+								<form method="post" action="{{base_url()}}/docs/edit">
+									<input type="hidden" name="doc_id" value="{{document.doc_id}}">
+									<button class="btn" type="submit">Editar</button>
+								</form>
+								
+								<article class="post">{{document.doc_text | raw}}</article>
+						</div>
+					</div>
+			</div>
+		</div>
+	<!--/ documents div -->
+
+{% endblock %}
